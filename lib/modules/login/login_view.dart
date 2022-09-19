@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:getx_assignment/modules/login/loginpages/login_mobile.dart';
 import 'package:getx_assignment/modules/login/loginpages/login_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
 import 'login_logic.dart';
 
 class LoginPage extends StatelessWidget {
