@@ -11,7 +11,9 @@ class Buttons {
         width: width,
         child: ElevatedButton(
           onPressed: () {
-            Get.toNamed(routes);
+            //if() {
+              Get.toNamed(routes);
+           // }
           },
           child: TextFields.texts(texts: texts,fontWeight: fontWeight,textSize: textSize,colors: textColor,align: align),
           style: ElevatedButton.styleFrom(

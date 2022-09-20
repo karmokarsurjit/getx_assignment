@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:getx_assignment/shared/constants/font_sizes.dart';
-import 'package:get/get.dart';
 
 import '../shared/constants/colors.dart';
 
 class TextFields {
-  static textFormField({texts,TextInputType? inputType,hidden=false,uds=0.0,lrs=0.0,validation}){
+  static textFormField({texts,TextInputType? inputType,hidden=false,uds=0.0,lrs=0.0,validation,context}){
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: lrs, vertical: uds),
       child: TextFormField(
+        key: context,
         style: const TextStyle(color: ConstantColors.TEXTWHITE),
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
