@@ -17,6 +17,7 @@ dependencies:
   responsive_builder: ^0.4.3
   get_storage: ^2.0.3
   flutter_svg: ^1.1.5
+  form_builder_validators: ^8.3.0
 
 dev_dependencies:
   flutter_test:

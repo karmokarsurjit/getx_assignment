@@ -8,4 +8,5 @@ class Images{
   static const info = Icon(Icons.info_outline,color: ConstantColors.YELLOW,);
   static const dash_info = "assets/images/dash_i_button.svg";
   static const dash_alert = Icon(Icons.notification_important_outlined,color: ConstantColors.GREY,);
+  static const bd_currency = "assets/images/currency_bdt.svg";
 }

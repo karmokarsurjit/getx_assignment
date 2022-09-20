@@ -2,6 +2,9 @@ import 'dart:ui';
 
 class ConstantColors{
   static const Color WHITE = Color(0xFFFFFFFF);
+  static const Color WHITE2 = Color(0xFFF8F5F5);
+  static const Color OFFWHITE = Color(0xFFF5F1F1);
+  static const Color TRANSPARENT = Color(0);
   static const Color GREY = Color(0xFF828282);
   static const Color DARKGREY = Color(0xFF32302C);
   static const Color BLACK = Color(0xFF000000);

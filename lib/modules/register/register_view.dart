@@ -6,12 +6,12 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 import 'register_logic.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends GetView<RegisterLogic> {
   const RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final logic = Get.find<RegisterLogic>();
+    Get.find<RegisterLogic>();
 
     return ResponsiveBuilder(
       builder: (context, sizingInformation) {

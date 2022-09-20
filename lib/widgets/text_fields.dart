@@ -1,34 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:getx_assignment/shared/constants/font_sizes.dart';
+import 'package:get/get.dart';
+
 import '../shared/constants/colors.dart';
 
 class TextFields {
-  static textFormField({texts,TextInputType? inputType,hidden=false,uds=0.0,lrs=0.0}) {
+  static textFormField({texts,TextInputType? inputType,hidden=false,uds=0.0,lrs=0.0,validation}){
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: lrs, vertical: uds),
       child: TextFormField(
-        style: TextStyle(color: ConstantColors.TEXTWHITE),
+        style: const TextStyle(color: ConstantColors.TEXTWHITE),
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: ConstantColors.FIELDOUTLINE),
+            borderSide: const BorderSide(color: ConstantColors.FIELDOUTLINE),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: ConstantColors.FIELDOUTLINE),
+            borderSide: const BorderSide(color: ConstantColors.FIELDOUTLINE),
           ),
           labelText: texts,
-          labelStyle: TextStyle(color: ConstantColors.TEXTWHITE)
+          labelStyle: const TextStyle(color: ConstantColors.TEXTWHITE)
         ),
         keyboardType: inputType,
         obscureText: hidden,
+        validator: validation,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
       ),
     );
   }
 
-  static texts({texts,colors=ConstantColors.TEXTBLACK,textSize=FontSizes.REGULAR,fontWeight=FontWeight.w300,TextAlign? align, abs=0.0}){
+  static texts({texts,colors=ConstantColors.TEXTBLACK,textSize=FontSizes.REGULAR,fontWeight=FontWeight.w400,TextAlign? align,uds=0.0,lrs=0.0}){
     return Padding(
-      padding: EdgeInsets.all(abs),
+      padding: EdgeInsets.symmetric(horizontal: lrs,vertical: uds),
       child: Text(texts,style: TextStyle(color: colors,fontSize: textSize,fontWeight: fontWeight),textAlign: align,),
     );
   }

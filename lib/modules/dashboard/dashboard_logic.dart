@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class RegisterLogic extends GetxController {
+class DashboardLogic extends GetxController {
 
   @override
   void onInit() {

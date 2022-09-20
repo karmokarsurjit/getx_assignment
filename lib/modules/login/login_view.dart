@@ -5,12 +5,12 @@ import 'package:getx_assignment/modules/login/loginpages/login_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'login_logic.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends GetView<LoginLogic> {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final logic = Get.find<LoginLogic>();
+    Get.find<LoginLogic>();
 
     return ResponsiveBuilder(
       builder: (context, sizingInformation) {

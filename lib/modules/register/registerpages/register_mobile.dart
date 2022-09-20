@@ -21,31 +21,33 @@ class RegisterPageMobilePortrait extends GetView<RegisterLogic> {
     Get.find<RegisterLogic>();
     return Scaffold(
       backgroundColor: ConstantColors.LOGINBACKGROUND,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: ListView(
         children: [
-
+          const SizedBox(height: 60.0),
           SvgPicture.asset(Images.logo),
+          TextFields.texts(texts: "MessXp",colors: ConstantColors.TEXTYELLOW,align: TextAlign.center,),
+          const SizedBox(height: 60),
+          TextFields.textFormField(texts: "Your Name",inputType: TextInputType.name,uds: 5.0,lrs: 20.0),
+          TextFields.textFormField(texts: "Email",inputType: TextInputType.emailAddress,uds: 5.0,lrs: 20.0),
+          TextFields.textFormField(texts: "Phone Number",inputType: TextInputType.phone,uds: 5.0,lrs: 20.0),
+          TextFields.textFormField(texts: "Password",inputType: TextInputType.visiblePassword,hidden: true,uds: 5.0,lrs: 20.0),
+          TextFields.textFormField(texts: "Confirm Password",inputType: TextInputType.visiblePassword,hidden: true,uds: 5.0,lrs: 20.0),
+          Buttons.regularButton(texts: "Register",routes: AppRoutes.DASHBOARD,fontWeight: FontWeight.w700,uds: 5.0,lrs: 20.0,height: 40.0,btcolor: ConstantColors.BUTTON),
 
-          TextFields.texts(texts: "MessXp",colors: ConstantColors.TEXTYELLOW,align: TextAlign.center),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextFields.texts(texts: "Already have account?"),
+              Buttons.textButton(texts: "Login Now",color: ConstantColors.BUTTON,routes: AppRoutes.LOGIN,fontWeight: FontWeight.w500),
+            ],
+          ),
 
-          const SizedBox(height: 80),
-
-          TextFields.textFormField(texts: "Your Name",inputType: TextInputType.name),
-
-          TextFields.textFormField(texts: "Email",inputType: TextInputType.emailAddress),
-
-          TextFields.textFormField(texts: "Phone Number",inputType: TextInputType.phone),
-
-          TextFields.textFormField(texts: "Password",inputType: TextInputType.visiblePassword,hidden: true),
-
-          TextFields.textFormField(texts: "Confirm Password",inputType: TextInputType.visiblePassword,hidden: true),
-
-          TextFields.texts(texts: "forget password",colors: ConstantColors.TEXTYELLOW,align: TextAlign.end,abs: 10,fontWeight: FontWeight.w300),
-
-          Buttons.regularButton(texts: "Log in",routes: AppRoutes.LOGIN),
-
+          Container(
+            height: 180.0,
+              alignment: Alignment.bottomRight,
+              padding: const EdgeInsets.all(10),
+              child: Images.info
+          ),
 
         ],
       ),
@@ -63,6 +65,38 @@ class RegisterPageMobileLandscape extends GetView<RegisterLogic> {
   @override
   Widget build(BuildContext context) {
     Get.find<RegisterLogic>();
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor: ConstantColors.LOGINBACKGROUND,
+      body: ListView(
+        children: [
+          const SizedBox(height: 60.0),
+          SvgPicture.asset(Images.logo),
+          TextFields.texts(texts: "MessXp",colors: ConstantColors.TEXTYELLOW,align: TextAlign.center,),
+          const SizedBox(height: 60),
+          TextFields.textFormField(texts: "Your Name",inputType: TextInputType.name,uds: 5.0,lrs: 20.0),
+          TextFields.textFormField(texts: "Email",inputType: TextInputType.emailAddress,uds: 5.0,lrs: 20.0),
+          TextFields.textFormField(texts: "Phone Number",inputType: TextInputType.phone,uds: 5.0,lrs: 20.0),
+          TextFields.textFormField(texts: "Password",inputType: TextInputType.visiblePassword,hidden: true,uds: 5.0,lrs: 20.0),
+          TextFields.textFormField(texts: "Confirm Password",inputType: TextInputType.visiblePassword,hidden: true,uds: 5.0,lrs: 20.0),
+          Buttons.regularButton(texts: "Register",routes: AppRoutes.DASHBOARD,fontWeight: FontWeight.w700,uds: 5.0,lrs: 20.0,height: 40.0,btcolor: ConstantColors.BUTTON),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextFields.texts(texts: "Already have account?"),
+              Buttons.textButton(texts: "Login Now",color: ConstantColors.BUTTON,routes: AppRoutes.LOGIN,fontWeight: FontWeight.w500),
+            ],
+          ),
+
+          Container(
+              height: 180.0,
+              alignment: Alignment.bottomRight,
+              padding: const EdgeInsets.all(10),
+              child: Images.info
+          ),
+
+        ],
+      ),
+    );
   }
 }
