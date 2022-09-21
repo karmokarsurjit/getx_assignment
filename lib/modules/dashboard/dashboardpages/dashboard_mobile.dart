@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_assignment/modules/dashboard/dashboard_logic.dart';
+import 'package:getx_assignment/modules/dashboard/dashboardpages/layers/bottom_layer.dart';
 import 'package:getx_assignment/modules/dashboard/dashboardpages/layers/mid_layer.dart';
 import 'package:getx_assignment/modules/dashboard/dashboardpages/layers/top_layer.dart';
 import 'package:getx_assignment/shared/constants/colors.dart';
@@ -10,8 +11,15 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 class DashboardPageMobilePortrait extends GetView<DashboardLogic> {
   final SizingInformation? sizingInformation;
+  final PageController pageController = PageController();
+  final tabData = [
+    "All",
+    "Monthly feast",
+    "Eid",
+    "Puja",
+  ];
 
-  const DashboardPageMobilePortrait({Key? key, this.sizingInformation})
+  DashboardPageMobilePortrait({Key? key, this.sizingInformation})
       : super(key: key);
 
   @override
@@ -28,9 +36,10 @@ class DashboardPageMobilePortrait extends GetView<DashboardLogic> {
         children: [
           TopLayer.topLayer(sizingInformation: sizingInformation),
           MidLayer.midLayer(sizingInformation: sizingInformation),
+          BottomLayer.bottomLayer(sizingInformation: sizingInformation,controller: pageController,dashboardLogic: controller,tabData: tabData),
         ],
       ),
-      
+
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: ConstantColors.GREY,
           iconSize: 1.0,

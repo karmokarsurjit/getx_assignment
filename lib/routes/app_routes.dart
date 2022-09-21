@@ -1,7 +1,7 @@
 abstract class AppRoutes{
 
   static const String LOGIN = "/";
-  static const String REGISTER = "/REGISTER";
-  static const String DASHBOARD = "/DASHBOARD";
+  static const String REGISTER = "/register";
+  static const String DASHBOARD = "/dashboard";
 
 }

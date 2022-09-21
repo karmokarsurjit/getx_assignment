@@ -36,6 +36,83 @@ class LoginPageMobilePortrait extends GetView<LoginLogic> {
           TextFields.textFormField(texts: "Password",inputType: TextInputType.visiblePassword,hidden: true,lrs: 20.0, uds: 5.0,
               validation: FormBuilderValidators.required(errorText: "Password is required")),
           Buttons.textButton(texts: "Forget password",color: ConstantColors.BUTTON,align: Alignment.centerRight,fontWeight: FontWeight.w500),
+
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Row(
+              children: [
+                const SizedBox(
+                  width: 20,
+                ),
+                Obx(
+                      () => Checkbox(
+                      checkColor: const Color(0xffF2C94C),
+                      activeColor: const Color(0xffF2C94C),
+                      shape: const CircleBorder(
+                          side: BorderSide(color: Color(0xffF2C94C))),
+                      value: controller.checkBool1.value,
+                      onChanged: (value) {
+                        controller.checkBool1.value =
+                        !controller.checkBool1.value;
+                        if (controller.checkBool2 != false.obs) {
+                          controller.checkBool1.value =
+                          !controller.checkBool1.value;
+                        }
+                      }),
+                ),
+                SvgPicture.asset(Images.box1),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text(
+                  "Manager",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(
+                  width: 50,
+                ),
+                Obx(
+                      () => Checkbox(
+                      autofocus: true,
+                      focusColor: Colors.amberAccent,
+                      checkColor: const Color(0xffF2C94C),
+                      activeColor: const Color(0xffF2C94C),
+                      shape: const CircleBorder(
+                        side: BorderSide(
+                            color: Color(0xffF2C94C)
+                        ),
+                      ),
+                      value: controller.checkBool2.value,
+                      onChanged: (value) {
+                        controller.checkBool2.value =
+                        !controller.checkBool2.value;
+                        if (controller.checkBool1 != false.obs) {
+                          controller.checkBool2.value =
+                          !controller.checkBool2.value;
+                        }
+                      }),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                SvgPicture.asset(Images.box2),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text(
+                  "Member",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
           Buttons.regularButton(texts: "Log in",routes: AppRoutes.DASHBOARD,fontWeight: FontWeight.w700,lrs: 20.0, uds: 10.0,height: 40.0,btcolor: ConstantColors.BUTTON),
 
           Row(

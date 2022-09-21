@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_assignment/shared/constants/colors.dart';
 import 'package:getx_assignment/widgets/text_fields.dart';
 
 class Buttons {
-  static regularButton({routes,texts,fontWeight,uds=0.0,lrs=0.0,height,width,btcolor,textSize, textColor,align}) {
+  static regularButton({routes,texts,fontWeight,uds=0.0,lrs=0.0,height,width,btcolor,textSize, textColor=ConstantColors.TEXTBLACK,align}) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: lrs,vertical: uds),
       child: SizedBox(
