@@ -3,23 +3,56 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import '../../../../widgets/views.dart';
 import '../../dashboard_logic.dart';
 
 class BottomLayer {
-  static bottomLayer({SizingInformation? sizingInformation,PageController? controller,
-    tabData,
-    DashboardLogic? dashboardLogic}) {
+  static bottomLayer({SizingInformation? sizingInformation, DashboardLogic? dashboardLogic}) {
+    List<Tab> tabs = [
+      Tab(text: "All",),
+      Tab(text: "Feast Meal",),
+      Tab(text: "Eid",),
+      Tab(text: "Puja",),
+    ];
+
+    List<Widget> pages = [
+
+      ListView(
+        children: [
+          Views.cardViews(dateName: "24 April 1997",titleString: "Monthly Feast on 24th April 1997",nameString:'Remind Me'),
+          Views.cardViews(dateName: "24 April 1997",titleString: "Monthly Feast on 24th April 1997",nameString:'Remind Me'),
+        ],
+      ),
+      ListView(
+        children: [
+          Views.cardViews(dateName: "1 December 1995",titleString: "Monthly Feast on 1st December 1995",nameString:'Remind Me'),
+          Views.cardViews(dateName: "1 December 1995",titleString: "Monthly Feast on 1st December 1995",nameString:'Remind Me'),
+        ],
+      ),
+      ListView(
+        children: [
+          Views.cardViews(dateName: "2 August 1996",titleString: "Monthly Feast on 2nd August 1996",nameString:'Remind Me'),
+          Views.cardViews(dateName: "2 August 1996",titleString: "Monthly Feast on 2nd August 1996",nameString:'Remind Me'),
+        ],
+      ),
+      ListView(
+        children: [
+          Views.cardViews(dateName: "10 July 1995",titleString: "Monthly Feast on 10th July 1995",nameString:'Remind Me'),
+          Views.cardViews(dateName: "10 July 1995",titleString: "Monthly Feast on 10th July 1995",nameString:'Remind Me'),
+        ],
+      )
+    ];
     return SizedBox(
-      height: 350,
+      height: 350.0,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 30,
+            height: 60.0,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
-              itemCount: tabData.length,
+              itemCount: tabs.length,
               itemBuilder: (context, index) {
                 return Obx(() {
                   return InkWell(
@@ -28,18 +61,18 @@ class BottomLayer {
                         print(index);
                       }
                       dashboardLogic?.selectedIndex.value = index;
-                      controller?.animateToPage(index,
+                      dashboardLogic?.pageController.animateToPage(index,
                           curve: Curves.easeIn,
                           duration: const Duration(milliseconds: 800));
                     },
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Column(
                         children: [
-                          Text(tabData[index]),
+                          tabs[index],
                           Container(
-                            height: 10,
-                            width: 40,
+                            height: 10.0,
+                            width: 40.0,
                             color: dashboardLogic?.selectedIndex.value == index
                                 ? Colors.yellow
                                 : Colors.transparent,
@@ -54,26 +87,24 @@ class BottomLayer {
           ),
           Expanded(
             child: PageView(
-              controller: controller,
-              children: dashboardLogic?.pageList as List<Widget>,
+              controller: dashboardLogic?.pageController,
+              children: pages,
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
               "Gossip",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 22,
+                fontSize: 22.0,
                 fontWeight: FontWeight.w600,
               ),
             ),
           ),
           const SizedBox(
-            height: 5,
+            height: 5.0,
           ),
           Container(
             padding: const EdgeInsets.all(8.0),
@@ -82,27 +113,27 @@ class BottomLayer {
               textAlign: TextAlign.justify,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 14,
+                fontSize: 14.0,
                 fontStyle: FontStyle.normal,
                 fontWeight: FontWeight.w400,
               ),
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 10.0,
           ),
           Row(
             children: const [
               SizedBox(
-                width: 30,
+                width: 30.0,
               ),
               Icon(Icons.favorite),
               SizedBox(
-                width: 30,
+                width: 30.0,
               ),
               Icon(Icons.messenger_outline),
               SizedBox(
-                width: 30,
+                width: 30.0,
               ),
               Icon(Icons.share),
             ],

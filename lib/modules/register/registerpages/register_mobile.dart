@@ -32,7 +32,7 @@ class RegisterPageMobilePortrait extends GetView<RegisterLogic> {
           TextFields.textFormField(texts: "Phone Number",inputType: TextInputType.phone,uds: 5.0,lrs: 20.0),
           TextFields.textFormField(texts: "Password",inputType: TextInputType.visiblePassword,hidden: true,uds: 5.0,lrs: 20.0),
           TextFields.textFormField(texts: "Confirm Password",inputType: TextInputType.visiblePassword,hidden: true,uds: 5.0,lrs: 20.0),
-          Buttons.regularButton(texts: "Register",routes: AppRoutes.DASHBOARD,fontWeight: FontWeight.w700,uds: 5.0,lrs: 20.0,height: 40.0,btcolor: ConstantColors.BUTTON),
+          Buttons.regularButton(texts: "Register",routes: AppRoutes.TESTPAGE,fontWeight: FontWeight.w700,uds: 5.0,lrs: 20.0,height: 40.0,btcolor: ConstantColors.BUTTON),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

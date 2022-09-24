@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:getx_assignment/shared/constants/font_sizes.dart';
 
 import '../shared/constants/colors.dart';
@@ -34,6 +35,15 @@ class TextFields {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: lrs,vertical: uds),
       child: Text(texts,style: TextStyle(color: colors,fontSize: textSize,fontWeight: fontWeight),textAlign: align,),
+    );
+  }
+
+  static formField({key,validator,name,label}){
+    return FormBuilderTextField(
+      key: key,
+      name: name,
+      decoration: InputDecoration(labelText: label),
+      validator: validator,
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
@@ -30,11 +31,23 @@ class LoginPageMobilePortrait extends GetView<LoginLogic> {
           SvgPicture.asset(Images.logo),
           TextFields.texts(texts: "MessXp",colors: ConstantColors.TEXTYELLOW,align: TextAlign.center),
           const SizedBox(height: 60.0),
-          TextFields.textFormField(texts: "Phone number or Code",inputType: TextInputType.phone,lrs: 20.0, uds: 5.0,
-              validation: FormBuilderValidators.compose([FormBuilderValidators.required(errorText: "This field is required"),
-                FormBuilderValidators.numeric(errorText: "Please enter only numbers")])),
-          TextFields.textFormField(texts: "Password",inputType: TextInputType.visiblePassword,hidden: true,lrs: 20.0, uds: 5.0,
-              validation: FormBuilderValidators.required(errorText: "Password is required")),
+          FormBuilder(key: controller.formKey,
+              child: Column(
+                children: [
+                  TextFields.formField(key: controller.emailFieldKey,name: "email",label: "Email",validator: FormBuilderValidators.compose([
+                    FormBuilderValidators.required(errorText: "ERROR!"),
+                    FormBuilderValidators.email(errorText: "Email not valid")
+                  ]),),
+                  TextFields.formField(key: controller.passFieldKey,name: "password",label: "Password",validator: FormBuilderValidators.compose([
+                    FormBuilderValidators.required(errorText: "ERROR!"),
+                  ]),),
+                ],
+              ), ),
+          // //TextFields.textFormField(texts: "Phone number or Code",inputType: TextInputType.phone,lrs: 20.0, uds: 5.0,
+          //     validation: FormBuilderValidators.compose([FormBuilderValidators.required(errorText: "This field is required"),
+          //       FormBuilderValidators.numeric(errorText: "Please enter only numbers")])),
+          // TextFields.textFormField(texts: "Password",inputType: TextInputType.visiblePassword,hidden: true,lrs: 20.0, uds: 5.0,
+          //     validation: FormBuilderValidators.required(errorText: "Password is required")),
           Buttons.textButton(texts: "Forget password",color: ConstantColors.BUTTON,align: Alignment.centerRight,fontWeight: FontWeight.w500),
 
           Padding(
@@ -42,7 +55,7 @@ class LoginPageMobilePortrait extends GetView<LoginLogic> {
             child: Row(
               children: [
                 const SizedBox(
-                  width: 20,
+                  width: 20.0,
                 ),
                 Obx(
                       () => Checkbox(
@@ -62,17 +75,17 @@ class LoginPageMobilePortrait extends GetView<LoginLogic> {
                 ),
                 SvgPicture.asset(Images.box1),
                 const SizedBox(
-                  width: 10,
+                  width: 10.0,
                 ),
                 const Text(
                   "Manager",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 20.0,
                     color: Colors.white,
                   ),
                 ),
                 const SizedBox(
-                  width: 50,
+                  width: 35.0,
                 ),
                 Obx(
                       () => Checkbox(
@@ -96,16 +109,16 @@ class LoginPageMobilePortrait extends GetView<LoginLogic> {
                       }),
                 ),
                 const SizedBox(
-                  width: 10,
+                  width: 10.0,
                 ),
                 SvgPicture.asset(Images.box2),
                 const SizedBox(
-                  width: 10,
+                  width: 10.0,
                 ),
                 const Text(
                   "Member",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 20.0,
                     color: Colors.white,
                   ),
                 ),
@@ -113,7 +126,14 @@ class LoginPageMobilePortrait extends GetView<LoginLogic> {
             ),
           ),
 
-          Buttons.regularButton(texts: "Log in",routes: AppRoutes.DASHBOARD,fontWeight: FontWeight.w700,lrs: 20.0, uds: 10.0,height: 40.0,btcolor: ConstantColors.BUTTON),
+          Buttons.regularButton(texts: "Log in",fontWeight: FontWeight.w700,lrs: 20.0, uds: 10.0,height: 40.0,btcolor: ConstantColors.BUTTON,
+              onPressed: (){
+                if(controller.formKey.currentState!.validate()){
+                  controller.formKey.currentState!.save();
+                  print(controller.formKey.currentState!.value);
+                  Get.toNamed(AppRoutes.DASHBOARD);
+                }
+              }),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

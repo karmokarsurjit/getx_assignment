@@ -14,21 +14,21 @@ static midLayer({SizingInformation? sizingInformation}){
         borderRadius: BorderRadius.circular(10.0),
       ),
       color: Colors.white,
-      elevation: 5,
+      elevation: 5.0,
       shadowColor: Colors.grey,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Column(
             children: [
-              TextFields.texts(texts: "10 \n Total Members",align: TextAlign.center, colors: ConstantColors.TEXTGREY,textSize: FontSizes.BIG,lrs: 10,uds: 10.0),
-              TextFields.texts(texts: "10 \n Total Meals",align: TextAlign.center, colors: ConstantColors.TEXTGREY,textSize: FontSizes.BIG,lrs: 10,uds: 10.0),
+              TextFields.texts(texts: "10 \n Total Members",align: TextAlign.center, colors: ConstantColors.TEXTGREY,textSize: FontSizes.BIG,lrs: 10.0,uds: 10.0),
+              TextFields.texts(texts: "10 \n Total Meals",align: TextAlign.center, colors: ConstantColors.TEXTGREY,textSize: FontSizes.BIG,lrs: 10.0,uds: 10.0),
             ],
           ),
           Column(
             children: [
-              TextFields.texts(texts: "10 \n Daily Expenses",align: TextAlign.center, colors: ConstantColors.TEXTGREY,textSize: FontSizes.BIG,lrs: 10,uds: 10.0),
-              TextFields.texts(texts: "10 \n Total Bazar",align: TextAlign.center, colors: ConstantColors.TEXTGREY,textSize: FontSizes.BIG,lrs: 10,uds: 10.0),
+              TextFields.texts(texts: "10 \n Daily Expenses",align: TextAlign.center, colors: ConstantColors.TEXTGREY,textSize: FontSizes.BIG,lrs: 10.0,uds: 10.0),
+              TextFields.texts(texts: "10 \n Total Bazar",align: TextAlign.center, colors: ConstantColors.TEXTGREY,textSize: FontSizes.BIG,lrs: 10.0,uds: 10.0),
             ],
           )
         ],

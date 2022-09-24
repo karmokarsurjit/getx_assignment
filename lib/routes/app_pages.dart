@@ -3,6 +3,8 @@ import 'package:getx_assignment/modules/dashboard/dashboard_view.dart';
 import 'package:getx_assignment/modules/login/login_binding.dart';
 import 'package:getx_assignment/modules/login/login_view.dart';
 import 'package:getx_assignment/modules/register/register_binding.dart';
+import 'package:getx_assignment/modules/test/test_binding.dart';
+import 'package:getx_assignment/modules/test/test_view.dart';
 import 'package:getx_assignment/routes/app_routes.dart';
 
 import '../modules/dashboard/dashboard_binding.dart';
@@ -32,6 +34,12 @@ class AppPages {
       bindings: [
         DashboardBinding(),
       ],
-    )
+    ),
+    GetPage(
+        name: AppRoutes.TESTPAGE,
+        page: () => const TestPage(),
+    bindings: [
+      TestBinding(),
+    ])
   ];
 }

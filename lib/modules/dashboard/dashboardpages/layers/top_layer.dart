@@ -20,25 +20,25 @@ class TopLayer {
           fit: StackFit.passthrough,
           children: [
             Container(
-              height: 120,
+              height: 120.0,
               alignment: Alignment.center,
               foregroundDecoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                    width: 5,
+                    width: 5.0,
                     color: const Color.fromARGB(150, 242, 201, 76),
                     style: BorderStyle.solid),
               ),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                    width: 12,
+                    width: 12.0,
                     color: const Color.fromARGB(150, 242, 201, 76),
                     style: BorderStyle.solid),
               ),
               child: Column(
                 children: [
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 15.0),
                   SvgPicture.asset(Images.bd_currency),
                   TextFields.texts(texts: "48.44",textSize: FontSizes.LARGE,colors: ConstantColors.TEXTGREY)
                 ],
