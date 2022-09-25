@@ -4,7 +4,7 @@ import 'package:getx_assignment/shared/constants/colors.dart';
 import 'package:getx_assignment/widgets/text_fields.dart';
 
 class Buttons {
-  static regularButton({routes,texts,fontWeight,uds=0.0,lrs=0.0,height,width,btcolor,textSize, textColor=ConstantColors.TEXTBLACK,align,onPressed}) {
+  static regularButton({texts,fontWeight,uds=0.0,lrs=0.0,height,width,btcolor,textSize, textColor=ConstantColors.TEXTBLACK,align,onPressed}) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: lrs,vertical: uds),
       child: SizedBox(
