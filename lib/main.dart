@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       enableLog: true,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
+      localizationsDelegates: const [
         FormBuilderLocalizations.delegate,
       ],
     );

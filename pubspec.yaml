@@ -1,7 +1,7 @@
 name: getx_assignment
 description: A GetX Flutter project.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -25,6 +25,7 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+
   device_preview:
     git:
       url: https://github.com/monkeydaichan/flutter_device_preview.git
