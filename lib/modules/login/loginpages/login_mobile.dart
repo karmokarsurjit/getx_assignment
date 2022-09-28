@@ -39,7 +39,8 @@ class LoginPageMobilePortrait extends GetView<LoginLogic> {
                     FormBuilderValidators.required(errorText: "Please enter your Phone Number or Code"),
                       FormBuilderValidators.equalLength(11,errorText: "Phone number or Code is not valid")
                   ]),),
-                  TextFields.formField(key: controller.passFieldKey,name: "password",label: "Password",hidden: true,inputType: TextInputType.visiblePassword,uds: 5.0,lrs: 20.0,validator: FormBuilderValidators.compose([
+                  TextFields.formField(key: controller.passFieldKey,name: "password",label: "Password",hidden: true,inputType: TextInputType.visiblePassword,uds: 5.0,lrs: 20.0,
+                    validator: FormBuilderValidators.compose([
                     FormBuilderValidators.required(errorText: "Password is not given"),
                     FormBuilderValidators.minLength(8,allowEmpty: false,errorText: "Password must be at least 8 characters")
                   ]),),
